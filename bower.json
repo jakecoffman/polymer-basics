@@ -1,0 +1,11 @@
+{
+  "name": "polymertry",
+  "version": "0.0.0",
+  "authors": [
+    "jake <jake@jakecoffman.com>"
+  ],
+  "license": "Unspecified",
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.0.0"
+  }
+}
