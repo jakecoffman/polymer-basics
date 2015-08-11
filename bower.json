@@ -6,6 +6,9 @@
   ],
   "license": "Unspecified",
   "dependencies": {
-    "polymer": "Polymer/polymer#1.0.0"
+    "polymer": "Polymer/polymer#1.0.0",
+    "iron-pages": "PolymerElements/iron-pages#~1.0.3",
+    "paper-button": "PolymerElements/paper-button#~1.0.3",
+    "page": "~1.6.3"
   }
 }

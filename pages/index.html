@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="/bower_components/iron-pages/iron-pages.html">
+    <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="routing.html">
+    <style>
+        #one {
+            background: green;
+            color: yellow;
+        }
+    </style>
+<body>
+<template is="dom-bind" id="app">
+    <iron-pages attr-for-selected="page" selected="{{route}}">
+        <div page="one">One</div>
+        <div page="two">Two</div>
+        <div page="three">Three</div>
+    </iron-pages>
+    <a href="/one">
+        <paper-button id="one">One</paper-button>
+    </a>
+    <a href="/two/2">
+        <paper-button raised>Two</paper-button>
+    </a>
+    <a href="/three">
+        <paper-button>Three</paper-button>
+    </a>
+</template>
+</body>
+</html>
