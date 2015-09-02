@@ -8,9 +8,8 @@
     <template>
 
     </template>
-</dom-module>
-<script type="text/javascript">
-    (function() {
+
+    <script type="text/javascript">
         Polymer({
             is: "ws-element",
             socket: null,
@@ -40,6 +39,6 @@
             close: function () {
                 this.socket.close();
             }
-        })
-    })();
-</script>
+        });
+    </script>
+</dom-module>

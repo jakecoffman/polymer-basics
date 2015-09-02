@@ -28,6 +28,7 @@ func main() {
 				log.Println(err)
 				return
 			}
+			log.Println("Received:", string(msg))
 			err = conn.WriteMessage(t, msg)
 			if err != nil {
 				log.Println(err)
@@ -35,5 +36,7 @@ func main() {
 			}
 		}
 	})
-	log.Fatal(http.ListenAndServe("localhost:8080", nil))
+	host := "localhost:3030"
+	log.Printf("http://%v", host)
+	log.Fatal(http.ListenAndServe(host, nil))
 }

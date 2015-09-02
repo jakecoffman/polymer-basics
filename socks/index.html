@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="ws.html">
+    <link rel="import" href="another.html">
 </head>
-<body>
-<ws-element url="ws://localhost/ws"></ws-element>
+<body unresolved>
+<template is="dom-bind" id="app">
+    <ws-element id="ws" url="ws://localhost:3030/ws"></ws-element>
+    <another-element id="hi" message="{{message}}"></another-element>
+</template>
 <script>
-    var wsElement = document.querySelector("ws-element");
-    wsElement.addEventListener('onerror', function (error){
+    addEventListener('onerror', function (error){
         throw new Error(error);
     });
-    wsElement.addEventListener('onopen', function () {
-        wsElement.send('Hello from client');
+    addEventListener('onopen', function () {
+        ws.send('Hello world!');
     });
-    wsElement.addEventListener('onmessage', function (message) {
-        // hello from the server
-        console.log(message.detail);
+    addEventListener('onmessage', function (message) {
+        console.log('parent listener:', message.detail);
+        hi.message = message.detail;
     });
 </script>
 </body>

@@ -1,0 +1,24 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<dom-module id="another-element">
+    <style></style>
+    <template>
+        Message: <span>{{message}}</span>
+    </template>
+
+    <script type="text/javascript">
+        Polymer({
+            is: "another-element",
+            properties: {
+                message: {
+                    type: String,
+                    notify: true
+                }
+            },
+            ready: function () {
+                addEventListener('onmessage', function (message) {
+                    console.log('sibling listener:', message.detail);
+                });
+            }
+        });
+    </script>
+</dom-module>
